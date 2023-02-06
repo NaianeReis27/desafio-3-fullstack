@@ -18,7 +18,6 @@ O desafio consiste em criar um pequeno cadastro de clientes com vínculo de cont
 - PostgreSQL
 - TypeORM
 - JWT
-- Jest
 
 ## Instruções
 
