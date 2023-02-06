@@ -1,5 +1,5 @@
-import AppDataSource from '../../../shared/typeorm/data_source';
-import { AppError } from '../../../shared/errors';
+import AppDataSource from '../../data_source';
+import { AppError } from '../../errors';
 import { INetworkUpdate, INetwork } from '../../interfaces/network.interface';
 import { NetWork } from '../../entities/network.entity';
 

@@ -1,4 +1,4 @@
-import AppDataSource from '../../../shared/typeorm/data_source';
+import AppDataSource from '../../data_source';
 import { User } from '../../entities/user.entity';
 import { IUser } from '../../interfaces/user.interface';
 

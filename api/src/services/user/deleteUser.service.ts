@@ -1,6 +1,6 @@
-import AppDataSource from '../../../shared/typeorm/data_source';
+import AppDataSource from '../../data_source';
 import { User } from '../../entities/user.entity';
-import { AppError } from '../../../shared/errors';
+import { AppError } from '../../errors';
 
 const deleteUserService = async (id: string) => {
     const userRepository = AppDataSource.getRepository(User);

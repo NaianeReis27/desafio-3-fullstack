@@ -1,14 +1,14 @@
-import AppDataSource from '../../../shared/typeorm/data_source';
+import AppDataSource from '../../data_source';
 import { compare } from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { IUserLogin } from '../../interfaces/user.interface';
 import { User } from '../../entities/user.entity';
-import { AppError } from '../../../shared/errors';
+import { AppError } from '../../errors';
 import 'dotenv/config';
 
 const createLoginService = async (data: IUserLogin): Promise<string> => {
     const { email, password } = data;
-    console.log(password);
+
     const userRepository = AppDataSource.getRepository(User);
     const user = await userRepository.findOneBy({
         email: email,

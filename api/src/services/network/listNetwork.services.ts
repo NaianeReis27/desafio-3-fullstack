@@ -1,4 +1,4 @@
-import AppDataSource from '../../../shared/typeorm/data_source';
+import AppDataSource from '../../data_source';
 import { NetWork } from '../../entities/network.entity';
 import { INetwork } from '../../interfaces/network.interface';
 

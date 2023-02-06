@@ -1,10 +1,10 @@
 import 'reflect-metadata';
 import express from 'express';
 import cors from 'cors';
-import usersRoutes from '../http/routes/user.routes';
-import loginRoutes from '../http/routes/login.routes';
-import handleErrorMiddleware from '../../modules/middlewares/handleError.middleware';
-import networkRoutes from '../http/routes/network.routes';
+import usersRoutes from './routes/user.routes';
+import loginRoutes from './routes/login.routes';
+import handleErrorMiddleware from './middlewares/handleError.middleware';
+import networkRoutes from './routes/network.routes';
 const app = express();
 app.use(cors());
 app.use(express.json());

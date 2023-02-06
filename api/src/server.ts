@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import AppDataSource from '../typeorm/data_source';
-import app from '../app';
+import AppDataSource from './data_source';
+import app from './app';
 
 AppDataSource.initialize()
     .then(() => {

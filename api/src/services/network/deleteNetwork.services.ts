@@ -1,6 +1,6 @@
-import AppDataSource from '../../../shared/typeorm/data_source';
+import AppDataSource from '../../data_source';
 import { NetWork } from '../../entities/network.entity';
-import { AppError } from '../../../shared/errors';
+import { AppError } from '../../errors';
 
 const deleteNetworkService = async (id: string) => {
     const networkRepository = AppDataSource.getRepository(NetWork);

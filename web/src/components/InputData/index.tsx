@@ -20,7 +20,7 @@ function InputData({label, data, register, errors, type}:IProps) {
   return (
     <div className="Info">
       <label>{label}</label>
-      <input type={type} {...register(data)} />
+      <input autoComplete="off" type={type} {...register(data)} />
       <p>{errors[data]?.message?.toString()}</p>
     </div>
   );

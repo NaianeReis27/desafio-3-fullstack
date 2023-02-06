@@ -1,7 +1,7 @@
-import AppDataSource from '../../../shared/typeorm/data_source';
+import AppDataSource from '../../data_source';
 import { NetWork } from '../../entities/network.entity';
 import { User } from '../../entities/user.entity';
-import { AppError } from '../../../shared/errors';
+import { AppError } from '../../errors';
 import { INetwork, INetworkRequest } from '../../interfaces/network.interface';
 
 const createNetworkService = async (

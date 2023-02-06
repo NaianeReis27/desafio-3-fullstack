@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import createSessionController from '../../../modules/controllers/login/cretateLogin.controller';
+import createSessionController from '../controllers/login/cretateLogin.controller';
 
 const loginRoutes = Router();
 

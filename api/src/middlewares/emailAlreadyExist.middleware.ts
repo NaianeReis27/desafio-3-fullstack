@@ -1,7 +1,7 @@
-import { AppError } from '../../shared/errors';
+import { AppError } from '../errors';
 import { Request, Response, NextFunction } from 'express';
 import { IUserRequest } from '../interfaces/user.interface';
-import AppDataSource from '../../shared/typeorm/data_source';
+import AppDataSource from '../data_source';
 import { User } from '../entities/user.entity';
 
 const emailAlreadyExistMiddleware = async (
