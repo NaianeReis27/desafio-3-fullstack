@@ -1,0 +1,43 @@
+{
+  "name": "desafio-3-fullstack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NaianeReis27/desafio-3-fullstack.git",
+  "author": "NaianeReis27 <email.annereis@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.17",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-plugin-prettier": "3.2.0",
+    "prettier": "^2.8.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4",
+    "@types/jsonwebtoken": "^8.5.9"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.13",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "pg": "^8.9.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.11",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts--fix",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migrations-create": "typeorm-ts-node-commonjs migration:create ./src/shared/typeorm/migrations",
+    "migrations-generate": "typeorm-ts-node-commonjs migration:generate ./src/shared/typeorm/migrations/table -d ./src/shared/typeorm/data_source.ts",
+    "migrations-run": "typeorm-ts-node-commonjs migration:run -d ./src/shared/typeorm/data_source.ts"
+  }
+}
