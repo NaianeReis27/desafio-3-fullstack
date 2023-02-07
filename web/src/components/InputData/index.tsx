@@ -1,8 +1,6 @@
 import "./styles.sass";
 import { UseFormRegister,FieldErrorsImpl, FieldValues} from "react-hook-form/dist/types";
 
-
-
 interface IProps {
   label:string
   data: string
@@ -11,16 +9,11 @@ interface IProps {
   type: string
 }
 
-interface Idata {
-  label: string;
-  data: string;
-}
-
 function InputData({label, data, register, errors, type}:IProps) {
   return (
     <div className="Info">
       <label>{label}</label>
-      <input autoComplete="off" type={type} {...register(data)} />
+      <input type={type} {...register(data)} autoComplete="on"/>
       <p>{errors[data]?.message?.toString()}</p>
     </div>
   );

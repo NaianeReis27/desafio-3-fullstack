@@ -8,6 +8,7 @@ import {
 } from "react";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { toast} from 'react-toastify';
 
 interface ApiContextProps {
   children: ReactNode;
@@ -62,7 +63,6 @@ export interface ApiContextData {
 export const ApiContext = createContext<ApiContextData>({} as ApiContextData);
 
 export const ApiContextProvider = ({ children }: ApiContextProps) => {
-  const [user, setUser] = useState(null);
   const [list, setList] = useState([]);
   const [modalAdd, setModalAdd] = useState<boolean>(false);
 
@@ -72,15 +72,19 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
     localStorage.getItem("@TOKEN")
   );
 
-  const login = async (data: ILogin | boolean) => {
+  const login = async (data: ILogin) => {
     await api
       .post("/login", data)
       .then((response) => {
+        console.log(response)
         setToken(response.data.token);
+        toast("Seja bem vindo!")
         localStorage.setItem("@TOKEN", response.data.token);
         navigate("/dashboard")
+        
       })
       .catch((error: any) => {
+        toast(error.message)
         console.log(error);
       });
   };
@@ -96,6 +100,7 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
         setList(response.data);
       })
       .catch((error: any) => {
+        toast(error.message)
         console.log(error);
       });
   };
@@ -108,9 +113,11 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
         },
       })
       .then((response) => {
+        toast("contato adicionado com sucesso")
         console.log(response)
       })
       .catch((error: any) => {
+        toast(error.message)
         console.log(error);
       });
   };
@@ -119,10 +126,12 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
     await api
       .post("/users", data)
       .then((response) => {
+        toast("usuário criado com sucesso")
         console.log(response)
         navigate("/")
       })
       .catch((error: any) => {
+        toast(error.message)
         console.log(error);
       });
   };

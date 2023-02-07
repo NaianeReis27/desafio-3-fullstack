@@ -6,6 +6,7 @@ import { ApiContext } from "../../context/apiContext";
 import { FieldValues } from "react-hook-form";
 import InputData from "../InputData";
 import { Link } from "react-router-dom";
+import "./styles.sass";
 
 const FormData = () => {
   const { login } = useContext(ApiContext);
@@ -25,11 +26,12 @@ const FormData = () => {
 
   const onclick = (data: any) => {
     login(data);
+    console.log(data)
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit(onclick)}>
+      <form  className={"form_login"} onSubmit={handleSubmit(onclick)}>
         <InputData
           type="text"
           data={"email"}
@@ -45,8 +47,9 @@ const FormData = () => {
           errors={errors}
         />
         <button>Login</button>
+        <Link to="/cadastro">Clique aqui para cadastrar</Link>
       </form>
-      <Link to="/cadastro">Clique aqui para cadastrar</Link>
+      
     </>
   );
 };

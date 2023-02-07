@@ -15,8 +15,7 @@ function Network() {
     <table>
         <thead>
           <tr>
-            <th>Nome</th>
-            <th>Telefone</th>
+            <h2>Contatos</h2>
           </tr>
         </thead>
       <tbody>
