@@ -1,5 +1,5 @@
 import AppDataSource from '../../data_source';
-import { AppError } from '../../errors';
+import { AppError } from '../../errors/AppError';
 import { INetworkUpdate, INetwork } from '../../interfaces/network.interface';
 import { NetWork } from '../../entities/network.entity';
 

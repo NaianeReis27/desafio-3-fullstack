@@ -1,10 +1,11 @@
 import 'reflect-metadata';
 import express from 'express';
-import cors from 'cors';
+import 'express-async-errors';
 import usersRoutes from './routes/user.routes';
+import cors from 'cors';
 import loginRoutes from './routes/login.routes';
-import handleErrorMiddleware from './middlewares/handleError.middleware';
 import networkRoutes from './routes/network.routes';
+import handleErrorMiddleware from './middlewares/handleError.middleware';
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -12,5 +13,4 @@ app.use('/users', usersRoutes);
 app.use('/login', loginRoutes);
 app.use('/networks', networkRoutes);
 app.use(handleErrorMiddleware);
-
 export default app;

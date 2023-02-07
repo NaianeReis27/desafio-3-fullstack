@@ -1,4 +1,4 @@
-import { AppError } from '../errors';
+import { AppError } from '../errors/AppError';
 import { Request, Response, NextFunction } from 'express';
 import { IUserRequest } from '../interfaces/user.interface';
 import AppDataSource from '../data_source';

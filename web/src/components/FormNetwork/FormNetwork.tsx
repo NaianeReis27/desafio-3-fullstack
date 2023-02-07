@@ -6,9 +6,14 @@ import { ApiContext } from "../../context/apiContext";
 import { FieldValues } from "react-hook-form";
 import InputData from "../InputData";
 
-const FormNetWork = () => {
+interface IProps {
+  type: string;
+  id?: string;
+}
+
+const FormNetWork = ({type, id}:IProps) => {
   
-  const {createNetwork, setModalAdd} = useContext(ApiContext);
+  const {createNetwork, setModalAdd, updatedNetwork} = useContext(ApiContext);
  
   const formSchema = yup.object().shape({
     name: yup
@@ -27,7 +32,12 @@ const FormNetWork = () => {
 
 
   const onclick = (data: any) => {
-    createNetwork(data)
+    if(type === "update"){
+      updatedNetwork(data, id)
+    }else{
+      createNetwork(data)
+    }
+    
     setModalAdd(false)
   };
 
@@ -36,7 +46,7 @@ const FormNetWork = () => {
           <form onSubmit={handleSubmit(onclick)}>
               <InputData type="text" data={'name'} label={"name"} register={register} errors={errors}/>
               <InputData type="tel" data={'tel'} label={"tel"} register={register} errors={errors}/>
-              <button type="submit">cadastrar</button>
+              <button type="submit">{type=="update"? "Atualizar" : "Criar"}</button>
           </form>
   );
 };

@@ -9,7 +9,7 @@
   padding: 35px
   gap: 45px
 
-button
+.container_dashboard > button
   width: 100px
   background-color: var(--color-font-blue)
   color: white
@@ -19,6 +19,10 @@ button
   cursor: pointer
   z-index: 9999999
 
+.container_dashboard > div
+  display: flex
+  justify-content: space-between
+  
 .modal_container
   width: 100%
   height: 100%
@@ -36,13 +40,10 @@ button
 
 .container_flex
   width: 100%
-  padding: 10px
   align-items: center
   display: flex
   justify-content: space-between
 
 .btn_exit
-  position: absolute
-  top:0
-  right: 0
-  margin: 40px 30px
+  position: relative
+  rigth: 0

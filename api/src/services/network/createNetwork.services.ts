@@ -1,7 +1,7 @@
 import AppDataSource from '../../data_source';
 import { NetWork } from '../../entities/network.entity';
 import { User } from '../../entities/user.entity';
-import { AppError } from '../../errors';
+import { AppError } from '../../errors/AppError';
 import { INetwork, INetworkRequest } from '../../interfaces/network.interface';
 
 const createNetworkService = async (

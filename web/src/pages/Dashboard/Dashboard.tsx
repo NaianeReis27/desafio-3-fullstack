@@ -4,30 +4,36 @@ import { ApiContext } from "../../context/apiContext";
 import { useContext } from "react";
 import Modal from "../../components/Modal";
 import FormNetWork from "../../components/FormNetwork/FormNetwork";
-import { toast} from 'react-toastify';
 const Dashboard = () => {
   const { modalAdd, setModalAdd } = useContext(ApiContext);
   const exit = () => {
     localStorage.removeItem("@TOKEN");
-    window.location.reload()
-  }
+    window.location.reload();
+  };
   return (
     <>
-    <button className="btn_exit" onClick={exit}>sair</button>
       {modalAdd && (
         <div className="modal_container">
           <Modal>
-            <div  className="container_flex">
+            <div className="container_flex">
               <h4>Cadastrar network</h4>
-              <button onClick={() => setModalAdd(false)} className="btn_close">X</button>
+              <button onClick={() => setModalAdd(false)} className="btn_close">
+                X
+              </button>
             </div>
-            <FormNetWork/>
+            <FormNetWork type="created" />
           </Modal>
         </div>
       )}
 
       <div className="container_dashboard">
-        <button onClick={() => setModalAdd(true)}>Adicionar contato</button>
+        <div>
+          <button onClick={() => setModalAdd(true)}>Adicionar contato</button>
+          <button className="btn_exit" onClick={exit}>
+            sair
+          </button>
+        </div>
+
         <Network />
       </div>
     </>
