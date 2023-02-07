@@ -12,8 +12,8 @@ const FormData = () => {
   const { login } = useContext(ApiContext);
 
   const formSchema = yup.object().shape({
-    email: yup.string().email().required(),
-    password: yup.string().required(),
+    email: yup.string().email("É necessário ser um email").required("O campo deve ser preenchido."),
+    password: yup.string().required("O campo deve ser preenchido."),
   });
 
   const {

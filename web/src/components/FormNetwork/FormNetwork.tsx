@@ -17,9 +17,9 @@ const FormNetWork = ({type, id}:IProps) => {
  
   const formSchema = yup.object().shape({
     name: yup
-    .string().required(),
+    .string().required("o campo deve ser preenchido."),
     tel: yup
-    .number().required(),
+    .string().typeError("Deve conter somente números."),
   });
 
   const {

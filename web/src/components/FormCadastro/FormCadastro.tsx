@@ -12,13 +12,14 @@ const FormCadastro = () => {
  
   const formSchema = yup.object().shape({
     name: yup
-    .string().required(),
+    .string().required("O campo deve ser preenchido."),
     tel: yup
-    .number().required(),
+    .number().typeError("O campo deve ser preenchido com um número de telefone").required("O campo deve ser preenchido.").positive("O número tem que ser um valor positivo")
+    .integer("O número tem que ser inteiro"),
     email: yup
-    .string().email().required(),
+    .string().email("Deve ser um email").required("O campo deve ser preenchido."),
     password: yup
-    .string().required(),
+    .string().required("O campo deve ser preenchido."),
   });
 
   const {
@@ -37,10 +38,10 @@ const FormCadastro = () => {
   return (
    
           <form onSubmit={handleSubmit(onclick)}>
-              <InputData type="text" data={'name'} label={"name"} register={register} errors={errors}/>
-              <InputData type="email" data={'email'} label={"email"} register={register} errors={errors}/>
-              <InputData type="tel" data={'tel'} label={"tel"} register={register} errors={errors}/>
-              <InputData type="password" data={'password'} label={"password"} register={register} errors={errors}/>
+              <InputData type="text" data={'name'} label={"Name"} register={register} errors={errors}/>
+              <InputData type="email" data={'email'} label={"E-mail"} register={register} errors={errors}/>
+              <InputData type="tel" data={'tel'} label={"Tel"} register={register} errors={errors}/>
+              <InputData type="password" data={'password'} label={"Password"} register={register} errors={errors}/>
               <button type="submit">cadastrar</button>
           </form>
   );
