@@ -85,7 +85,7 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
         navigate("/dashboard");
       })
       .catch((error: any) => {
-        toast(error.message);
+        toast(error.response.data.message);
         console.log(error);
       });
   };
@@ -101,7 +101,7 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
         setList(response.data);
       })
       .catch((error: any) => {
-        toast(error.message);
+        toast(error.response.data.message);
         console.log(error);
       });
   };
@@ -118,7 +118,7 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
         toast("contato deletado");
       })
       .catch((error: any) => {
-        toast(error.message);
+        toast(error.response.data.message);
         console.log(error);
       });
   };
@@ -134,7 +134,7 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
         toast("contato atualizado");
       })
       .catch((error: any) => {
-        toast(error.message);
+        toast(error.response.data.message);
         console.log(error);
       });
   };
@@ -151,7 +151,7 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
         console.log(response);
       })
       .catch((error: any) => {
-        toast(error.message);
+        toast(error.response.data.message);
         console.log(error);
       });
   };
@@ -165,7 +165,7 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
         navigate("/");
       })
       .catch((error: any) => {
-        toast(error.message);
+        toast(error.response.data.message);
         console.log(error);
       });
   };
