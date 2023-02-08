@@ -29,7 +29,7 @@ O desafio consiste em criar um pequeno cadastro de clientes com vínculo de cont
 
 ### `Obs => Não use a porta 3333 pois está rodando a api`
 
-2. Após criar a base de dados entre no terminal e  rode  o  comando abaixo para installar todas as dependências utilizadas no projeto.
+2. Após criar a base de dados entre no terminal  rode  o  comando abaixo para installar todas as dependências utilizadas no projeto.
    
 ### `cd web`
 ### `yarn install`
