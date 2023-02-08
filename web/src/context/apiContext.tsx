@@ -55,7 +55,11 @@ export interface ApiContextData {
   token: string | null;
   list: IList[];
   setModalAdd: Dispatch<SetStateAction<boolean>>;
+  setAsideActive: Dispatch<SetStateAction<boolean>>;
   modalAdd: boolean;
+  setAnimation: Dispatch<SetStateAction<boolean>>;
+  animation: boolean;
+  asideActive: boolean
   createNetwork: (data: INetwork) => void;
   createUser: (data: IUserRequest) => void;
   deleteNetwork: (id: string) => void;
@@ -67,6 +71,8 @@ export const ApiContext = createContext<ApiContextData>({} as ApiContextData);
 export const ApiContextProvider = ({ children }: ApiContextProps) => {
   const [list, setList] = useState([]);
   const [modalAdd, setModalAdd] = useState<boolean>(false);
+  const [asideActive, setAsideActive] = useState<boolean>(false);
+  const [animation, setAnimation ] = useState<boolean>(false)
 
   const navigate = useNavigate();
 
@@ -183,6 +189,10 @@ export const ApiContextProvider = ({ children }: ApiContextProps) => {
         createNetwork,
         createUser,
         updatedNetwork,
+        setAsideActive,
+        asideActive,
+        animation,
+        setAnimation
       }}
     >
       {children}

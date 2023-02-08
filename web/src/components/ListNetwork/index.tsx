@@ -16,11 +16,11 @@ function Network() {
     <>
       <table>
         <thead className="title">
-          <tr>
+        
             <td>
               <h2>Contatos</h2>
             </td>
-          </tr>
+  
         </thead>
         <tbody>
           {list.length > 0 ? (

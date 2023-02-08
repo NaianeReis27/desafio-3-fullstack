@@ -1,15 +1,27 @@
 import Network from "../../components/ListNetwork";
 import "./styles.sass";
 import { ApiContext } from "../../context/apiContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Modal from "../../components/Modal";
 import FormNetWork from "../../components/FormNetwork/FormNetwork";
+import Nav from "../../components/Nav";
+import SideBar from "../../components/SideBar";
+import { MdOutlineAdd } from 'react-icons/md'
+
+
 const Dashboard = () => {
-  const { modalAdd, setModalAdd } = useContext(ApiContext);
-  const exit = () => {
-    localStorage.removeItem("@TOKEN");
-    window.location.reload();
-  };
+  const { modalAdd, setModalAdd, asideActive, setAsideActive, setAnimation, animation} = useContext(ApiContext);
+  
+
+  const closeModal = () => {
+    console.log("huh")
+    setAnimation(true)
+    setTimeout(() => {
+      setAsideActive(false)
+    }, 300)
+   
+    
+  }
   return (
     <>
       {modalAdd && (
@@ -26,15 +38,23 @@ const Dashboard = () => {
         </div>
       )}
 
-      <div className="container_dashboard">
+      <div className="container_dashboard"  >
+        <Nav />
         <div>
-          <button onClick={() => setModalAdd(true)}>Adicionar contato</button>
-          <button className="btn_exit" onClick={exit}>
-            sair
-          </button>
+        <div className="container_network">
+            <button onClick={() => setModalAdd(true)}><MdOutlineAdd size="20px"/></button>
+            <Network />
+          </div>
+          {
+            asideActive && (
+            <>
+            <SideBar animation ={animation} />
+            <div onClick={closeModal} className="overlay"></div>
+            </>
+            )  
+          }
+       
         </div>
-
-        <Network />
       </div>
     </>
   );

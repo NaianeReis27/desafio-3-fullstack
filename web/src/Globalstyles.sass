@@ -1,6 +1,7 @@
 *
   box-sizing: border-box
   font-family: 'Source Sans Pro', sans-serif
+  box-sizing: border-box
 
 
 html,
@@ -13,7 +14,7 @@ body,
 
 
 body
-    background-color: var(--background-color)
+    background-color: var(--color-background-dark)
 
 .App
   display: flex
@@ -29,7 +30,28 @@ body
   --outline-color-input: #66AFE9
   --color-font-blue:  #3D75BB
   --color-font-blue-span:  #5D9CEC
+  --color-background-dark :#111828
+  --color-gray-navbar: #3a424f
+  --color-green: #28c762
 
 
 
+@keyframes slide-left 
+  0% 
+    -webkit-transform: translateX(200px)
+            transform: translateX(200px)
+  
+  100% 
+    -webkit-transform: translateX(0)
+            transform: translateX(0)
+  
+@keyframes slide-right 
+  0% 
+    -webkit-transform: translateX(0)
+            transform: translateX(0)
+  
+  100% 
+    -webkit-transform: translateX(300px)
+            transform: translateX(300px)
+  
 
